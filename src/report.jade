@@ -16,6 +16,7 @@ html
                         th Title
                         th Tags
                         th Created
+                        th Updated
                 tbody
                     each issue in openIssues
                         tr
@@ -23,6 +24,7 @@ html
                             td: a(href=issue.url)= issue.title
                             td= issue.labels.join(', ')
                             td= issue.createdAt.format('MMMM Do, YYYY')
+                            td= issue.updatedAt.format('MMMM Do, YYYY')
 
             h2 Closed Issues&nbsp;
                 small (#{closedIssues.length})

@@ -26,7 +26,7 @@ module.exports = {
   generate: function (config) {
 
     var options = {
-      uri: 'https://api.github.com/repos/' + config.owner + '/' + config.repo + '/issues',
+      uri: 'https://api.github.com/repos/' + config.owner + '/' + config.repo + '/issues?sort=updated&direction=asc&per_page=100',
       headers: {
         'User-Agent': 'github-issue-reports'
       }
@@ -50,6 +50,7 @@ module.exports = {
             createdAt: moment(issue.created_at),
             comments: issue.comments,
             closedAt: moment(issue.closed_at),
+            updatedAt: moment(issue.updated_at),
             body: issue.body,
             state: issue.state,
             labels: _.map(issue.labels, function (label) {
