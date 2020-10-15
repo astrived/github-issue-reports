@@ -55,6 +55,9 @@ module.exports = {
             state: issue.state,
             labels: _.map(issue.labels, function (label) {
               return label.name;
+            }),
+            ownedBy: _.map(issue.assignees, function(assignee) {
+              return assignee.login;
             })
           }
         });

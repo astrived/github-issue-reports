@@ -15,6 +15,8 @@ html
                         th Number
                         th Title
                         th Tags
+                        th Creator
+                        th Owner
                         th Created
                         th Updated
                 tbody
@@ -23,6 +25,8 @@ html
                             td= issue.number
                             td: a(href=issue.url)= issue.title
                             td= issue.labels.join(', ')
+                            td= issue.createdBy
+                            td= issue.ownedBy.join(', ')
                             td= issue.createdAt.format('MMMM Do, YYYY')
                             td= issue.updatedAt.format('MMMM Do, YYYY')
 
